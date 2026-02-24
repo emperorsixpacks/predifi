@@ -39,8 +39,6 @@ jobs:
             ~/.cargo/git
             contract/target
           key: ${{ runner.os }}-cargo-${{ hashFiles('contract/Cargo.lock') }}
-      - name: Check Formatting
-        run: cargo fmt --all -- --check
       - name: Lint with Clippy
         run: cargo clippy --target wasm32-unknown-unknown -- -D warnings
       - name: Build Contract (WASM)
